@@ -25,9 +25,9 @@ function! prettier#resolver#config#resolve(config, hasSelection, start, end) abo
           \ get(a:config, 'configPrecedence', g:prettier#config#config_precedence) .
           \ ' --prose-wrap=' .
           \ get(a:config, 'proseWrap', g:prettier#config#prose_wrap) .
-          \ ' --stdin-filepath=' .
+          \ ' --stdin-filepath="' .
           \ simplify(expand('%:p')) .
-          \ ' --loglevel error '.
+          \ '" --loglevel error '.
           \ ' --stdin '
   return l:cmd
 endfunction
